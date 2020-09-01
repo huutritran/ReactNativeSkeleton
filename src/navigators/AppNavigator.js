@@ -1,11 +1,11 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import HomeScreen from '../screens/Home/HomeScreen';
-import AnotherScreen from '../screens/Another/AnotherScreen';
+import HomeNavigator from './HomeNavigator';
 import ScreenIds from '../screens/ScreenIds';
+import DetailArticleScreen from '../screens/DetailArticle/DetailArticleScreen';
 import {navigationRef, isReadyRef} from '../services/NavigationService';
-
+import {displayName} from '../../app.json';
 const AppStack = createStackNavigator();
 
 const AppNavigator = ({navigation}) => {
@@ -16,8 +16,15 @@ const AppNavigator = ({navigation}) => {
         isReadyRef.current = true;
       }}>
       <AppStack.Navigator>
-        <AppStack.Screen name={ScreenIds.Home} component={HomeScreen} />
-        <AppStack.Screen name={ScreenIds.Another} component={AnotherScreen} />
+        <AppStack.Screen
+          options={{title: displayName}}
+          name={ScreenIds.HomeNavigator}
+          component={HomeNavigator}
+        />
+        <AppStack.Screen
+          name={ScreenIds.DetailArticle}
+          component={DetailArticleScreen}
+        />
       </AppStack.Navigator>
     </NavigationContainer>
   );

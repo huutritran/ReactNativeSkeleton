@@ -11,7 +11,7 @@ import {SafeAreaView} from 'react-native';
 import AppNavigator from './navigators/AppNavigator';
 import {Helpers} from './theme';
 import {Provider} from 'react-redux';
-import {store, persistor} from './stores';
+import {store} from './stores';
 
 const App = () => {
   return (

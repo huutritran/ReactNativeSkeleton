@@ -1,6 +1,8 @@
 const ScreenIds = {
-  Home: 'Home',
-  Another: 'Another',
+  HomeNavigator: 'HomeNavigator',
+  TopHeadlines: 'TopHeadlines',
+  Categories: 'Categories',
+  DetailArticle: 'DetailArticle',
 };
 
 export default ScreenIds;
