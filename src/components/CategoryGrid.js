@@ -39,6 +39,7 @@ const CategoryGrid = ({categories = CATEGORIES_SPEC}) => {
 
   return (
     <FlatGrid
+      style={Helpers.selfStretch}
       keyExtractor={(item) => item.name}
       itemContainerStyle={Helpers.center}
       data={categories}
