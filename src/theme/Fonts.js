@@ -23,4 +23,10 @@ export default StyleSheet.create({
   normal: {
     fontSize: size.regular,
   },
+  medium: {
+    fontSize: size.medium,
+  },
+  small: {
+    fontSize: size.small,
+  },
 });

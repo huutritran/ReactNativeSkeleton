@@ -9,4 +9,11 @@ export default {
   button: {
     backgroundColor: Colors.primary,
   },
+  separator: {
+    height: 1,
+    backgroundColor: Colors.grey,
+  },
+  backgroundColor: {
+    backgroundColor: Colors.white,
+  },
 };

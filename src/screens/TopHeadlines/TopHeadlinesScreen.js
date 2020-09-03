@@ -1,12 +1,12 @@
 import React from 'react';
 import {View} from 'react-native';
-import {Helpers} from '../../theme';
-import {AppText} from '../../components';
+import {Helpers, ApplicationStyles} from '../../theme';
+import {ArticleList} from '../../components';
 
 const TopHeadlinesScreen = () => {
   return (
-    <View style={[Helpers.fill, Helpers.center]}>
-      <AppText>TopHeadlinesScreen</AppText>
+    <View style={[Helpers.fill, ApplicationStyles.backgroundColor]}>
+      <ArticleList />
     </View>
   );
 };
