@@ -1,10 +1,9 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
 import {FlatGrid} from 'react-native-super-grid';
-import CategoryItem from './CategoryItem';
-import {STRINGS} from '../assets/localize/String';
 import {ICONS} from '../assets/icons';
+import {STRINGS} from '../assets/localize/String';
 import {Colors, Helpers} from '../theme';
+import CategoryItem from './CategoryItem';
 
 const CATEGORIES = [
   STRINGS.common.business,
