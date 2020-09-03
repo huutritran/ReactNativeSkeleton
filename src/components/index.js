@@ -5,6 +5,8 @@ import {getAppLanguage} from '../stores/AppSettings/Selectors';
 import {translate} from '../assets/localize';
 import ArticleItem from './ArticleItem';
 import ArticleList from './ArticleList';
+import CategoryItem from './CategoryItem';
+import CategoryGrid from './CategoryGrid';
 
 function useLanguages(key) {
   const language = useSelector(getAppLanguage);
@@ -35,4 +37,6 @@ module.exports = {
   AppButton,
   ArticleItem,
   ArticleList,
+  CategoryItem,
+  CategoryGrid,
 };

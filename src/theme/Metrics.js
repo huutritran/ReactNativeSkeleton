@@ -12,10 +12,15 @@ export default {
   bottomMargin: {
     marginBottom: normal,
   },
+  topMargin: {
+    marginTop: normal,
+  },
   mediumBottomMargin: {
     marginBottom: medium,
   },
-
+  smallTopMargin: {
+    marginTop: small,
+  },
   tinyVerticalMargin: {
     marginVertical: tiny,
   },

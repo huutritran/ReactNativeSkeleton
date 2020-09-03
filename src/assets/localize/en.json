@@ -1,7 +1,10 @@
 {
-  "ENGLISH_LANGUAGE": "ENGLISH",
-  "VIETNAMESE_LANGUAGE": "VIETNAMESE",
-  "GO_TO_ANOTHER_SCREEN": "Go to another screen",
-  "HOME_SCREEN_DESCRIPTION": "This is home screen",
-  "ANOTHER_SCREEN_DESCRIPTION": "This is another screen"
+  "CATEGORIES" : "Categories",
+  "BUSINESS": "Business",
+  "ENTERTAINMENT": "Entertainment",
+  "GENERAL": "General",
+  "HEALTH": "Health",
+  "SCIENCE": "Science",
+  "SPORTS" : "Sports",
+  "TECHNOLOGY": "Technology"
 }

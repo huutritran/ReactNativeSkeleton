@@ -14,4 +14,11 @@ export default {
   success: '#28a745',
   error: '#dc3545',
   grey: '#DADADA',
+  pink: '#f06292',
+  purple: '#ba68c8',
+  deepPurple: '#9575cd',
+  indigo: '#7986cb',
+  blue: '#64b5f6',
+  cyan: '#4dd0e1',
+  deepOrange: '#ff8a65',
 };
