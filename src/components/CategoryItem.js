@@ -2,8 +2,8 @@ import React from 'react';
 import {StyleSheet, TouchableOpacity} from 'react-native';
 import {ICONS} from '../assets/icons';
 import CustomIcon from '../assets/icons/CustomIcon';
-import {AppText} from '../components/index';
 import {Colors, Fonts, Helpers, Metrics} from '../theme';
+import AppText from './AppText';
 
 const IconSize = 48;
 

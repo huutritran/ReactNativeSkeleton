@@ -1,5 +1,5 @@
-import {API_KEY, BASE_URL} from 'react-native-config';
+import Config from 'react-native-config';
 
-const Config = {API_KEY, BASE_URL};
+const Configs = {API_KEY: Config.API_KEY, BASE_URL: Config.BASE_URL};
 
-export default Config;
+export default Configs;

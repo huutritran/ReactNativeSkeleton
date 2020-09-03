@@ -1,14 +1,13 @@
 import restFulApi from '../network/restfulApi';
-// import Config from '../config';
+import Configs from '../config';
 import LogService from './LogService';
-import Config from 'react-native-config';
 
 const changeRequest = (requestConfig) => {
   const configs = {
     ...requestConfig,
-    url: `${requestConfig.url}&apiKey=${Config.API_KEY}`,
+    url: `${requestConfig.url}&apiKey=${Configs.API_KEY}`,
   };
-  LogService.log('Change config', Config);
+  LogService.log('Change config', Configs);
   return configs;
 };
 
@@ -18,7 +17,7 @@ const middlewares = {
 
 const restfulApiInstance = restFulApi(
   {
-    baseURL: Config.BASE_URL,
+    baseURL: Configs.BASE_URL,
   },
   middlewares,
 );
