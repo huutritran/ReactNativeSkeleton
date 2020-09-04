@@ -7,5 +7,7 @@ export const STRINGS = {
     science: 'SCIENCE',
     sports: 'SPORTS',
     technology: 'TECHNOLOGY',
+    top_headlines: 'TOP_HEADLINES',
+    categories: 'CATEGORIES',
   },
 };
