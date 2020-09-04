@@ -6,9 +6,22 @@ import ScreenIds from '../screens/ScreenIds';
 import DetailArticleScreen from '../screens/DetailArticle/DetailArticleScreen';
 import {navigationRef, isReadyRef} from '../services/NavigationService';
 import {displayName} from '../../app.json';
+import CustomIcon from '../assets/icons/CustomIcon';
+import {ICONS} from '../assets/icons';
+import {Metrics} from '../theme';
+
 const AppStack = createStackNavigator();
 
-const AppNavigator = ({navigation}) => {
+const createHeaderButton = ({name, onPress, size = 16}) => {
+  const props = {name, onPress, size};
+  return <CustomIcon style={Metrics.smallHorizontalMargin} {...props} />;
+};
+
+const AppNavigator = () => {
+  const onChooseSources = () => {
+    alert('On choose sources');
+  };
+
   return (
     <NavigationContainer
       ref={navigationRef}
@@ -17,7 +30,20 @@ const AppNavigator = ({navigation}) => {
       }}>
       <AppStack.Navigator>
         <AppStack.Screen
-          options={{title: displayName}}
+          options={{
+            title: displayName,
+            headerRight: () =>
+              createHeaderButton({
+                name: ICONS.SOURCES,
+                onPress: onChooseSources,
+              }),
+            headerLeft: () =>
+              createHeaderButton({
+                name: ICONS.MENU,
+                onPress: onChooseSources,
+                size: 20,
+              }),
+          }}
           name={ScreenIds.HomeNavigator}
           component={HomeNavigator}
         />

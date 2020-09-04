@@ -62,7 +62,7 @@ const ArticleList = ({initialPage = 1}) => {
     navigation?.navigate(ScreenIds.DetailArticle, {url: item.url});
   };
 
-  const renderItem = ({item, index}) => {
+  const renderItem = ({item}) => {
     const {publishedAt} = item;
     const date = DateTimeUtil.toRelativeTime(publishedAt);
     return (

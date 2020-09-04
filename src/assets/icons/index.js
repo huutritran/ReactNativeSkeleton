@@ -6,4 +6,7 @@ export const ICONS = {
   GENERAL: 'general',
   SCIENCE: 'science',
   ENTERTAINMENT: 'entertainment',
+  SETTING: 'setting',
+  SOURCES: 'sources',
+  MENU: 'menu',
 };
