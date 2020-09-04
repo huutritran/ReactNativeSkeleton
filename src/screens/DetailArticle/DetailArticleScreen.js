@@ -1,14 +1,9 @@
 import React from 'react';
-import {View} from 'react-native';
-import {Helpers} from '../../theme';
-import {AppText} from '../../components';
+import WebView from 'react-native-webview';
 
-const DetailArticleScreen = () => {
-  return (
-    <View style={[Helpers.fill, Helpers.center]}>
-      <AppText>DetailArticleScreen</AppText>
-    </View>
-  );
+const DetailArticleScreen = ({route}) => {
+  const {url} = route.params;
+  return <WebView source={{uri: url}} />;
 };
 
 export default DetailArticleScreen;

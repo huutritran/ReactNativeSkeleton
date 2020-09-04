@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import Configs from '../config';
 import restFulApi from '../network/restfulApi';
+import LogService from './LogService';
 
 const changeRequest = (requestConfig) => {
   const configs = {
@@ -26,19 +27,19 @@ export const useTopHeadlines = () => {
   const [error, setError] = useState(null);
 
   const fetchData = async (page) => {
-    console.log('-----Fetch Data----');
+    LogService.log('-----Fetch Data----');
     setLoading(true);
     setError(null);
     try {
       const response = await getTopHeadlines(page);
       if (response.data && response.data.articles) {
         const tempArticles = response.data.articles ?? [];
-        console.log('-----Fetch Data Success----', tempArticles);
+        LogService.log('-----Fetch Data Success----', tempArticles.length);
         setArticles(tempArticles);
       }
       setLoading(false);
     } catch (err) {
-      console.log('-----Fetch Data Error----', err);
+      LogService.log('-----Fetch Data Error----', err);
       setError(err);
       setLoading(false);
     }

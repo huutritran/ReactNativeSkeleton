@@ -4,12 +4,15 @@ import {useTopHeadlines} from '../services/TristanNewsService';
 import {ApplicationStyles} from '../theme';
 import ArticleItem from './ArticleItem';
 import {useMount} from '../utils/commonHooks';
+import {useNavigation} from '@react-navigation/native';
+import ScreenIds from '../screens/ScreenIds';
 
 const ArticleList = ({initialPage = 1}) => {
   const [page, setPage] = useState(initialPage);
   const [refresh, setRefresh] = useState(false);
   const [loadMore, setLoadMore] = useState(false);
   const [data, setData] = useState([]);
+  const navigation = useNavigation();
 
   const {fetchData, isLoading, acticles, error} = useTopHeadlines();
 
@@ -54,7 +57,13 @@ const ArticleList = ({initialPage = 1}) => {
     await fetchData(initialPage);
   };
 
-  const renderItem = ({item}) => <ArticleItem {...item} />;
+  const onPress = (item) => {
+    navigation?.navigate(ScreenIds.DetailArticle, {url: item.url});
+  };
+
+  const renderItem = ({item}) => (
+    <ArticleItem {...item} onPress={() => onPress(item)} />
+  );
 
   const renderSeparator = () => {
     return <View style={ApplicationStyles.separator} />;
