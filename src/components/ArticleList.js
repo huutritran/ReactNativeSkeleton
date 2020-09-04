@@ -1,11 +1,12 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {useEffect, useState} from 'react';
 import {FlatList, View} from 'react-native';
+import ScreenIds from '../screens/ScreenIds';
 import {useTopHeadlines} from '../services/TristanNewsService';
 import {ApplicationStyles} from '../theme';
-import ArticleItem from './ArticleItem';
 import {useMount} from '../utils/commonHooks';
-import {useNavigation} from '@react-navigation/native';
-import ScreenIds from '../screens/ScreenIds';
+import ArticleItem from './ArticleItem';
+import DateTimeUtil from '../utils/DateTimeUtil';
 
 const ArticleList = ({initialPage = 1}) => {
   const [page, setPage] = useState(initialPage);
@@ -61,9 +62,13 @@ const ArticleList = ({initialPage = 1}) => {
     navigation?.navigate(ScreenIds.DetailArticle, {url: item.url});
   };
 
-  const renderItem = ({item}) => (
-    <ArticleItem {...item} onPress={() => onPress(item)} />
-  );
+  const renderItem = ({item, index}) => {
+    const {publishedAt} = item;
+    const date = DateTimeUtil.toRelativeTime(publishedAt);
+    return (
+      <ArticleItem {...item} onPress={() => onPress(item)} publishedAt={date} />
+    );
+  };
 
   const renderSeparator = () => {
     return <View style={ApplicationStyles.separator} />;
