@@ -1,13 +1,9 @@
-import React, {useMemo} from 'react';
-import {useSelector} from 'react-redux';
-import {getAppLanguage} from '../stores/AppSettings/Selectors';
-import {translate} from '../assets/localize';
+import AppButton from './AppButton';
+import AppText from './AppText';
 import ArticleItem from './ArticleItem';
 import ArticleList from './ArticleList';
-import CategoryItem from './CategoryItem';
 import CategoryGrid from './CategoryGrid';
-import AppText from './AppText';
-import AppButton from './AppButton';
+import CategoryItem from './CategoryItem';
 
 module.exports = {
   AppText,
