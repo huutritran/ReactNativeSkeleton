@@ -9,6 +9,7 @@ import {displayName} from '../../app.json';
 import CustomIcon from '../assets/icons/CustomIcon';
 import {ICONS} from '../assets/icons';
 import {Metrics} from '../theme';
+import CategoriesArticlesScreen from '../screens/CategoriesArticles/CategoriesArticlesScreen';
 
 const AppStack = createStackNavigator();
 
@@ -50,6 +51,11 @@ const AppNavigator = () => {
         <AppStack.Screen
           name={ScreenIds.DetailArticle}
           component={DetailArticleScreen}
+        />
+        <AppStack.Screen
+          name={ScreenIds.CategoriesArticles}
+          component={CategoriesArticlesScreen}
+          options={({route}) => ({title: route.params.name})}
         />
       </AppStack.Navigator>
     </NavigationContainer>

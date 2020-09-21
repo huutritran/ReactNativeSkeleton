@@ -22,7 +22,7 @@ const getTopHeadlines = (page) =>
   restfulApiInstance.get(`/v2/top-headlines?country=us&page=${page}`);
 
 export const useTopHeadlines = () => {
-  const [acticles, setArticles] = useState([]);
+  const [articles, setArticles] = useState([]);
   const [isLoading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -45,7 +45,7 @@ export const useTopHeadlines = () => {
     }
   };
 
-  return {fetchData, isLoading, acticles, error};
+  return {fetchData, isLoading, articles, error};
 };
 
 export default {

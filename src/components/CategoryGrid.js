@@ -31,9 +31,14 @@ const CATEGORIES_SPEC = CATEGORIES.map((value, index) => ({
   backgroundColor: COLORS[index],
 }));
 
-const CategoryGrid = ({categories = CATEGORIES_SPEC}) => {
+const CategoryGrid = ({categories = CATEGORIES_SPEC, onPressItem}) => {
   const renderItem = ({item}) => {
-    return <CategoryItem {...item} />;
+    return (
+      <CategoryItem
+        {...item}
+        onPress={() => onPressItem && onPressItem(item)}
+      />
+    );
   };
 
   return (

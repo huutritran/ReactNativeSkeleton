@@ -3,6 +3,7 @@ const ScreenIds = {
   TopHeadlines: 'TopHeadlines',
   Categories: 'Categories',
   DetailArticle: 'DetailArticle',
+  CategoriesArticles: 'CategoriesArticles',
 };
 
 export default ScreenIds;

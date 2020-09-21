@@ -15,7 +15,7 @@ const ArticleList = ({initialPage = 1}) => {
   const [data, setData] = useState([]);
   const navigation = useNavigation();
 
-  const {fetchData, isLoading, acticles, error} = useTopHeadlines();
+  const {fetchData, isLoading, articles, error} = useTopHeadlines();
 
   useMount(async () => {
     await fetchData();
@@ -23,14 +23,14 @@ const ArticleList = ({initialPage = 1}) => {
 
   useEffect(() => {
     if (loadMore) {
-      setData([...data, ...acticles]);
+      setData([...data, ...articles]);
       setPage(page + 1);
     } else {
-      setData(acticles);
+      setData(articles);
       setPage(initialPage);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [acticles]);
+  }, [articles]);
 
   useEffect(() => {
     if (!isLoading) {
