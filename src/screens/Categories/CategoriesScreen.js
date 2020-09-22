@@ -4,7 +4,6 @@ import {Helpers} from '../../theme';
 import {CategoryGrid} from '../../components';
 import {useNavigation} from '@react-navigation/native';
 import ScreenIds from '../ScreenIds';
-import {useLanguages} from '../../stores/AppSettings';
 import {useSelector} from 'react-redux';
 import {getAppLanguage} from '../../stores/AppSettings/Selectors';
 import {translate} from '../../assets/localize';
@@ -14,7 +13,7 @@ const CategoriesScreen = () => {
   const navigation = useNavigation();
   const onPressItem = ({name}) => {
     const category = translate(name, {locale: language});
-    navigation.navigate(ScreenIds.CategoriesArticles, {name: category});
+    navigation.navigate(ScreenIds.CategoriesArticles, {title: category, name});
   };
   return (
     <View style={[Helpers.fill, Helpers.center]}>

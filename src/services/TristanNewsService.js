@@ -18,10 +18,15 @@ const restfulApiInstance = restFulApi(
   {changeRequest},
 );
 
-const getTopHeadlines = (page) =>
-  restfulApiInstance.get(`/v2/top-headlines?country=us&page=${page}`);
+const getTopHeadlines = ({page, category}) =>
+  restfulApiInstance.get(`/v2/top-headlines?page=${page}`, {
+    params: {
+      country: 'us',
+      category,
+    },
+  });
 
-export const useTopHeadlines = () => {
+export const useTopHeadlines = (category) => {
   const [articles, setArticles] = useState([]);
   const [isLoading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -31,7 +36,7 @@ export const useTopHeadlines = () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await getTopHeadlines(page);
+      const response = await getTopHeadlines({page, category});
       if (response.data && response.data.articles) {
         const tempArticles = response.data.articles ?? [];
         LogService.log('-----Fetch Data Success----', tempArticles.length);

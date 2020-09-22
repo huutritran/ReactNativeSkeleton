@@ -55,7 +55,7 @@ const AppNavigator = () => {
         <AppStack.Screen
           name={ScreenIds.CategoriesArticles}
           component={CategoriesArticlesScreen}
-          options={({route}) => ({title: route.params.name})}
+          options={({route}) => ({title: route.params.title})}
         />
       </AppStack.Navigator>
     </NavigationContainer>

@@ -8,17 +8,17 @@ import {useMount} from '../utils/commonHooks';
 import ArticleItem from './ArticleItem';
 import DateTimeUtil from '../utils/DateTimeUtil';
 
-const ArticleList = ({initialPage = 1}) => {
+const ArticleList = ({initialPage = 1, category}) => {
   const [page, setPage] = useState(initialPage);
   const [refresh, setRefresh] = useState(false);
   const [loadMore, setLoadMore] = useState(false);
   const [data, setData] = useState([]);
   const navigation = useNavigation();
 
-  const {fetchData, isLoading, articles, error} = useTopHeadlines();
+  const {fetchData, isLoading, articles, error} = useTopHeadlines(category);
 
   useMount(async () => {
-    await fetchData();
+    await fetchData(initialPage);
   });
 
   useEffect(() => {
