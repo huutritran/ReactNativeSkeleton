@@ -59,7 +59,10 @@ const ArticleList = ({initialPage = 1, category}) => {
   };
 
   const onPress = (item) => {
-    navigation?.navigate(ScreenIds.DetailArticle, {url: item.url});
+    navigation?.navigate(ScreenIds.DetailArticle, {
+      url: item.url,
+      title: item.title,
+    });
   };
 
   const renderItem = ({item}) => {

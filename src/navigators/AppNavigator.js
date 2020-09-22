@@ -46,6 +46,7 @@ const AppNavigator = () => {
         <AppStack.Screen
           name={ScreenIds.DetailArticle}
           component={DetailArticleScreen}
+          options={({route}) => ({title: route.params.title})}
         />
         <AppStack.Screen
           name={ScreenIds.CategoriesArticles}
