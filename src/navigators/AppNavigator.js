@@ -33,11 +33,6 @@ const AppNavigator = () => {
         <AppStack.Screen
           options={{
             title: displayName,
-            headerRight: () =>
-              createHeaderButton({
-                name: ICONS.SOURCES,
-                onPress: onChooseSources,
-              }),
             headerLeft: () =>
               createHeaderButton({
                 name: ICONS.MENU,
