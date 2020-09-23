@@ -1,0 +1,25 @@
+fastlane_version '2.53.1'
+
+platform :ios do
+   # iOS Lanes
+end
+
+platform :android do
+  # Android Lanes
+  desc 'Build the Android application.'
+  private_lane :build do
+    gradle(task: 'clean', project_dir: 'android/')
+    gradle(task: 'assemble', build_type: 'debug', project_dir: 'android/')
+  end
+
+  desc 'Build and upload to App Center.'
+  lane :beta do
+  build
+  appcenter_upload(
+    api_token: ENV["APPCENTER_API_TOKEN"],
+    owner_name: ENV["APPCENTER_OWNER_NAME"],
+    app_name: ENV["APPCENTER_APP_NAME"],
+  )
+  end
+
+end
